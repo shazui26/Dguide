@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238373446756",
+    "project_id": "dguide-b323c",
+    "storage_bucket": "dguide-b323c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238373446756:android:55cc075b8b6e990fc26b71",
+        "android_client_info": {
+          "package_name": "com.ex.dguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZapau7MHbNcZnJ_ZdPR5_ADkrKGUNbYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

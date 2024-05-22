@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <com.mapbox.navigation.ui.maneuver.view.MapboxManeuverView
+        android:id="@+id/maneuverView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6sp"
+        android:elevation="4sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1sp"
+        android:layout_marginStart="1sp"
+        android:layout_marginEnd="1sp"
+        android:elevation="4dp"
+        android:hint="@string/search"
+        android:id="@+id/searchLayout"
+        android:visibility="gone"
+        app:boxBackgroundColor="@color/simi_transparent_blue"
+        app:boxCornerRadiusBottomEnd="20sp"
+        app:boxCornerRadiusBottomStart="20sp"
+        app:boxCornerRadiusTopEnd="20sp"
+        app:boxCornerRadiusTopStart="20sp"
+        app:boxStrokeWidthFocused="0sp"
+        app:boxStrokeWidth="0sp"
+        app:startIconDrawable="@drawable/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoComplete"
+            tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#D0FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/searchLayout"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.mapbox.navigation.ui.voice.view.MapboxSoundButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="6sp"
+        app:layout_constraintTop_toBottomOf="@id/maneuverView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/soundButton"/>
+
+    <com.mapbox.navigation.ui.tripprogress.view.MapboxTripProgressView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tripProgressView" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setRoute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="20sp"
+        android:text="@string/find_path"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/focusLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/refreshMap"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginStart="315dp"
+        android:src="@drawable/location_focus"
+        android:backgroundTint="@color/colorOnPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tripProgressView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:borderWidth="0dp"
+        android:theme="@style/Theme.MaterialComponents"
+        app:layout_constraintTop_toBottomOf="@+id/maneuverView"
+        tools:ignore="ContentDescription,RelativeOverlap,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/refreshMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="315dp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginTop="136dp"
+        android:src="@drawable/refresh"
+        android:backgroundTint="@color/colorOnPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/tripProgressView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:borderWidth="0dp"
+        android:theme="@style/Theme.MaterialComponents"
+        app:layout_constraintTop_toBottomOf="@id/maneuverView"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck," />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="315dp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginTop="290dp"
+        android:src="@drawable/baseline_add_24"
+        android:backgroundTint="@color/colorOnPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/setRoute"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout"
+        app:borderWidth="0dp"
+        android:theme="@style/Theme.MaterialComponents"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck," />
+
+    <include layout="@layout/loading_layout"
+        android:id="@+id/loadingLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        />
+
+
+    <TextView
+        android:id="@+id/MainRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="350dp"
+        android:background="@color/colorOnPrimary"
+      />
+
+    <!-- Alternative Route 1 TextView -->
+    <TextView
+        android:id="@+id/AlternativeRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/MainRoute"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorOnPrimary"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

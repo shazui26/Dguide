@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Dguide</string>
+    <string name="mapbox_access_token" tools:ignore="Typos">pk.eyJ1Ijoic2hhd2luZzIzIiwiYSI6ImNscmtobjd3bDBhcTgyeGswMmg2MDZxZzAifQ.3JKmedUZgpIw5FO1JxpJbg</string>
+    <string name="find_path">Find Path</string>
+    <string name="search">Search Establishments</string>
+    <string name="fetching_route">Finding Routes....</string>
+    <string name="navigate">Navigate</string>
+    <string name="arrival">You have Arrived at your destination</string>
+    <string name="Submit">SUBMIT</string>
+    <string name="submit">Submit</string>
+    <string name="male">Male</string>
+    <string name="loading_map_data">Loading map data…</string>
+    <string name="app_title">Digos Establishments Path-Finder Application</string>
+    <string name="eta_main_route">ETA Main Route:</string>
+    <string name="eta_alternative_route">ETA Alternative Route:</string>
+    <string name="no_results">No results Found</string>
+    <string name="todo">TODO</string>
+</resources>
