@@ -4,5 +4,5 @@ to make this app run, you need to create a[ mapbox](https://www.mapbox.com/) acc
 it's realtime database.
 
 this app can geotag a place within the map, save it to the database and dislay it to the map interface
-it can also be for offline navigation and search 
+it can also be used for offline navigation and search.
 for suggestions and improvements you can contact me @ sharwinc31@gmail.com
